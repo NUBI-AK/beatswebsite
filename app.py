@@ -17,16 +17,6 @@ app.config['SITE_URL'] = os.environ.get('SITE_URL')
 
 db.init_app(app)
 
-# Get the absolute path of the project directory
-  # Load environment variables from .env file
-
-app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-
-# Use environment variable if present, otherwise fall back to the explicit sqlite path
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI') or \
-    'sqlite:///' + os.path.join(basedir, 'createbeats.db')
-
 import routes
 routes.init_app(app)
 
