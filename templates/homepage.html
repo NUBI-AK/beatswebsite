@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<div class="container-fluid hero-section text-center">
+  <h1 class="display-4">WELCOME TO MY 2DB MUSIC WEBSITE</h1>
+  <p class="lead">Discover my beats, listen, and purchase directly from here.</p>
+  <a href="#beats-section" class="btn btn-primary btn-lg">Browse Beats</a>
+</div>
+
+<!-- Beats Section -->
+<div class="container py-5" id="beats-section">
+  <h2 class="text-center mb-5">Available Beats</h2>
+
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    {% for beat in beats %}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+
+        <!-- Image -->
+        {% if beat.image_url %}
+        <img src="{{ beat.image_url }}" class="card-img-top" alt="{{ beat.title }}">
+        {% else %}
+        <img src="https://via.placeholder.com/300x200?text=No+Image" class="card-img-top" alt="No image">
+        {% endif %}
+
+        <!-- Card Body -->
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ beat.title }}</h5>
+          <p class="card-text">{{ beat.description }}</p>
+          <p class="text-muted fw-bold">$ {{ beat.price }}</p>
+
+          <!-- Audio Preview -->
+          {% if beat.preview_url %}
+          <audio controls class="w-100 mt-auto">
+            <source src="{{ url_for('static', filename='audio/' + beat.preview_url) }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<!-- Register Form Section -->
+<div class="container py-5" style="max-width: 400px;">
+  <h2 class="text-center mb-4">Create Account</h2>
+
+  <!-- Flask-WTF form -->
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    <!-- Name Field -->
+    <div class="mb-3">
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(class="form-control") }}
+    </div>
+
+    <!-- Email Field -->
+    <div class="mb-3">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control") }}
+    </div>
+
+    <!-- Password Field -->
+    <div class="mb-3">
+      {{ form.password.label(class="form-label") }}
+      {{ form.password(class="form-control") }}
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-grid">
+      {{ form.submit(class="btn btn-primary btn-lg") }}
+    </div>
+  </form>
+
+  <!-- Optional: link to login page -->
+  <p class="text-center mt-3">
+    Already have an account? <a href="/login">Login here</a>
+  </p>
+</div>
+{% endblock %}

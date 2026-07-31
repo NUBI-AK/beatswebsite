@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<!-- Login Form Section -->
+<div class="container py-5" style="max-width: 400px;">
+  <h2 class="text-center mb-4">Login</h2>
+  
+  <!-- Flask-WTF form -->
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    <!-- Email Field -->
+    <div class="mb-3">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control") }}
+    </div>
+
+    <!-- Password Field -->
+    <div class="mb-3">
+      {{ form.password.label(class="form-label") }}
+      {{ form.password(class="form-control") }}
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-grid">
+      {{ form.submit(class="btn btn-primary btn-lg") }}
+    </div>
+  </form>
+
+  <!-- Optional: link to register -->
+  <p class="text-center mt-3">
+    Don't have an account? <a href="/register">Register here</a>
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+/* Navbar */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Bootstrap yellow */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 6rem 1rem;
+}
+.hero-section h1 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.hero-section .btn-primary {
+    background-color: #ff4c4c;
+    border: none;
+}
+.hero-section .btn-primary:hover {
+    background-color: #ff1f1f;
+}
+
+/* Beats Cards */
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+.card-body p {
+    margin-bottom: 0.5rem;
+}
+audio {
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #fff;
+    font-size: 0.9rem;
+}
