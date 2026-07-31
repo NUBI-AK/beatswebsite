@@ -5,9 +5,9 @@ from models import db, Beat
 import os
 from dotenv import load_dotenv
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-load_dotenv(os.path.join(basedir, '.env'))
-
+# basedir = os.path.abspath(os.path.dirname(__file__))
+# load_dotenv(os.path.join(basedir, '.env'))
+load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
