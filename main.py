@@ -18,6 +18,7 @@ db.init_app(app)
 import routes
 routes.init_app(app)
 
+
 @app.context_processor
 def inject_current_year():
   return {"current_year": datetime.now().year}
